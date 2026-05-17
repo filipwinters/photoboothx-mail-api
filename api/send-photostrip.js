@@ -17,10 +17,10 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "Photobooth <onboarding@resend.dev>",
+        from: "PhotoBoothX <mail@photoboothx.app>"
         to: [email],
-        subject: "Je photobooth foto",
-        html: "<p>Hier is je photobooth fotostrip.</p>",
+        subject: "PhotoBoothX fotostrip!",
+        html: "<p>Hier is je PhotoBoothX fotostrip.</p>",
         attachments: [
           {
             filename: "photostrip.jpg",
