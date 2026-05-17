@@ -21,12 +21,7 @@ export default async function handler(req, res) {
         to: [email],
         subject: "PhotoBoothX fotostrip!",
         html: "<p>Hier is je PhotoBoothX fotostrip.</p>",
-        attachments: [
-          {
-            filename: "photostrip.jpg",
-            content: imageBase64
-          }
-        ]
+        
       })
     });
 
