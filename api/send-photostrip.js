@@ -20,8 +20,7 @@ export default async function handler(req, res) {
         from: "PhotoBoothX <mail@photoboothx.app>",
         to: [email],
         subject: "PhotoBoothX fotostrip!",
-        html: "<p>Hier is je PhotoBoothX fotostrip.</p>",
-        
+        html: "<p>Hier is je PhotoBoothX fotostrip.</p>"
       })
     });
 
