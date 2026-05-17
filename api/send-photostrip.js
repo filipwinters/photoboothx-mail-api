@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   try {
     const { email, imageBase64 } = req.body;
 
-    if (!email) {
+    if (!email || !imageBase64) {
       return res.status(400).json({ error: "Missing email or image" });
     }
 
@@ -19,12 +19,19 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from: "PhotoBoothX <mail@photoboothx.app>",
         to: [email],
-        subject: "PhotoBoothX fotostrip!",
-        html: "<p>Hier is je PhotoBoothX fotostrip.</p>"
+        subject: "Je PhotoBoothX fotostrip!",
+        html: "<p>Hier is je PhotoBoothX fotostrip.</p>",
+        attachments: [
+          {
+            filename: "photostrip.jpg",
+            content: imageBase64
+          }
+        ]
       })
     });
 
     const data = await response.json();
+
     console.log(data);
 
     if (!response.ok) {
@@ -33,6 +40,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ ok: true, data });
   } catch (error) {
+    console.error(error);
     return res.status(500).json({ error: error.message });
   }
 }
