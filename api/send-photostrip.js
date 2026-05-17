@@ -22,11 +22,12 @@ export default async function handler(req, res) {
         subject: "Je PhotoBoothX fotostrip!",
         html: "<p>Hier is je PhotoBoothX fotostrip.</p>",
         attachments: [
-          {
-            filename: "photostrip.jpg",
-            content: imageBase64
-          }
-        ]
+  {
+    filename: "photostrip.jpg",
+    content: imageBase64,
+    contentType: "image/jpeg"
+  }
+]
       })
     });
 
