@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "PhotoBoothX <mail@photoboothx.app>"
+        from: "PhotoBoothX <mail@photoboothx.app>",
         to: [email],
         subject: "PhotoBoothX fotostrip!",
         html: "<p>Hier is je PhotoBoothX fotostrip.</p>",
