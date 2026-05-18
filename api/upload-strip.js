@@ -34,11 +34,14 @@ export default async function handler(req, res) {
       })
     );
 
-    const url = `https://strips.photoboothx.app/${fileName}`;
+    const imageUrl = `https://strips.photoboothx.app/${fileName}`;
 
+    const pageUrl = `https://photoboothx-mail-api.vercel.app/s.html?img=${encodeURIComponent(imageUrl)}&event=${encodeURIComponent("Sarah & James")}&date=${encodeURIComponent("24 MEI 2025")}`;
+    
     return res.status(200).json({
       success: true,
-      url,
+      url: pageUrl,
+      imageUrl: imageUrl
     });
 
   } catch (error) {
