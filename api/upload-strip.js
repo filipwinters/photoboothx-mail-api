@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       })
     );
 
-    const url = `https://photoboothx.app/${fileName}`;
+    const url = `https://strips.photoboothx.app/${fileName}`;
 
     return res.status(200).json({
       success: true,
